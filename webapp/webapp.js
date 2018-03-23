@@ -29,28 +29,28 @@ angular.module('baitap ', [
 		mySocket.emit("RAIN")
 	}
 	
-	$scope.upt5  = function(se){
+	$scope.upt5  = function(){
 		mySocket.emit("1")
 	}
-	$scope.upt51  = function(se){
+	$scope.upt51  = function(){
 		mySocket.emit("2")
 	}
-	$scope.upt6  = function(se){
+	$scope.upt6  = function(){
 		mySocket.emit("3")
 	}
-	$scope.upt61  = function(se){
+	$scope.upt61  = function(){
 		mySocket.emit("4")
 	}
-	$scope.upt7  = function(se){
+	$scope.upt7  = function(){
 		mySocket.emit("5")
 	}
-	$scope.upt71  = function(se){
+	$scope.upt71  = function(){
 		mySocket.emit("6")
 	}
-	$scope.upt8  = function(se){
+	$scope.upt8  = function(){
 		mySocket.emit("7")
 	}
-	$scope.upt81  = function(se){
+	$scope.upt81  = function(){
 		mySocket.emit("8")
 	}
 	
