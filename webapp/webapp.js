@@ -25,15 +25,36 @@ angular.module('myApp', [
 	$scope.lcd = ["", ""]
 	$scope.servoPosition = 0
 	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
-      	$scope.se = 2
+      	$scope.se =[2]
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
 	$scope.updateSensor  = function() {
 		mySocket.emit("RAIN")
 	}
 	
-	$scope.upt  = function(se){
+	$scope.upt5  = function(se){
 		mySocket.emit("1")
+	}
+	$scope.upt5.1  = function(se){
+		mySocket.emit("2")
+	}
+	$scope.upt6  = function(se){
+		mySocket.emit("3")
+	}
+	$scope.upt6.1  = function(se){
+		mySocket.emit("4")
+	}
+	$scope.upt7  = function(se){
+		mySocket.emit("5")
+	}
+	$scope.upt7.1  = function(se){
+		mySocket.emit("6")
+	}
+	$scope.upt8  = function(se){
+		mySocket.emit("7")
+	}
+	$scope.upt8.1  = function(se){
+		mySocket.emit("8")
 	}
 	
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
