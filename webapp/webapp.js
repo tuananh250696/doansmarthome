@@ -20,7 +20,7 @@ angular.module('myApp', [
 	////Khu 1 -- Khu cài đặt tham số 
     //cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
-    $scope.CamBienMua = "Không biết nữa ahihi, chưa thấy có thằng nào cập nhập hết";
+    $scope.CamBienMua = "Không biết nữa ahihi,dơi cập nhật";
     $scope.leds_status = [1, 1]
 	$scope.lcd = ["", ""]
 	$scope.servoPosition = 0
@@ -64,6 +64,14 @@ angular.module('myApp', [
 		
 		console.log("SEND SERVO", json) //debug chơi à
 		mySocket.emit("SERVO", json)
+	}
+	// button
+	$scope.updatebutton = function(0) {
+		
+		
+		var json = {"ledv():0"}
+		console.log("LCD_PRINT ", $scope.lcd)
+		mySocket.emit("LCD_PRINT", json)
 	}
 	
 	////Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
