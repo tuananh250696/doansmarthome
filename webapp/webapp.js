@@ -1,4 +1,4 @@
-angular.module('baitap ', [
+angular.module('myApp', [
     'ngRoute',
     'mobile-angular-ui',
 	'btford.socket-io'
