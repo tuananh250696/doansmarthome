@@ -32,25 +32,25 @@ angular.module('myApp', [
 	$scope.upt5  = function(se){
 		mySocket.emit("1")
 	}
-	$scope.upt5.1  = function(se){
+	$scope.upt51  = function(se){
 		mySocket.emit("2")
 	}
 	$scope.upt6  = function(se){
 		mySocket.emit("3")
 	}
-	$scope.upt6.1  = function(se){
+	$scope.upt61  = function(se){
 		mySocket.emit("4")
 	}
 	$scope.upt7  = function(se){
 		mySocket.emit("5")
 	}
-	$scope.upt7.1  = function(se){
+	$scope.upt71  = function(se){
 		mySocket.emit("6")
 	}
 	$scope.upt8  = function(se){
 		mySocket.emit("7")
 	}
-	$scope.upt8.1  = function(se){
+	$scope.upt81  = function(se){
 		mySocket.emit("8")
 	}
 	
