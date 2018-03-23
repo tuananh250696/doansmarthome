@@ -38,7 +38,7 @@ angular.module('myApp', [
 		console.log("send LED ", $scope.leds_status)
 		
 		var json = {
-			"led": $scope.leds_status
+			$scope.leds_status
 		}
 		mySocket.emit("LED", json)
 	}
