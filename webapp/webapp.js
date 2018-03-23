@@ -1,4 +1,4 @@
-angular.module('myApp', [
+angular.module('đồ án', [
     'ngRoute',
     'mobile-angular-ui',
 	'btford.socket-io'
