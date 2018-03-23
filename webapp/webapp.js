@@ -25,14 +25,14 @@ angular.module('myApp', [
 	$scope.lcd = ["", ""]
 	$scope.servoPosition = 0
 	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
-       $scope.t = 0
+       $scope = 0
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
 	$scope.updateSensor  = function() {
 		mySocket.emit("RAIN")
 	}
 	
-	$scope.upt  = function(1) {
+	$scope.upt  = function($scope) {
 		mySocket.emit("1")
 	}
 	
