@@ -65,14 +65,6 @@ angular.module('myApp', [
 		console.log("SEND SERVO", json) //debug chơi à
 		mySocket.emit("SERVO", json)
 	}
-	// button
-	$scope.updatebutton = function(0) {
-		
-		
-		var json = {"ledv():0"}
-		console.log("LCD_PRINT ", $scope.lcd)
-		mySocket.emit("LCD_PRINT", json)
-	}
 	
 	////Khu 3 -- Nhận dữ liệu từ Arduno gửi lên (thông qua ESP8266 rồi socket server truyền tải!)
 	//các sự kiện từ Arduino gửi lên (thông qua esp8266, thông qua server)
