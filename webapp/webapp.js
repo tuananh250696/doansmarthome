@@ -32,7 +32,7 @@ angular.module('myApp', [
 		mySocket.emit("RAIN")
 	}
 	
-	$scope.upt  = function() {
+	$scope.upt  = 2{
 		mySocket.emit("1")
 	}
 	
