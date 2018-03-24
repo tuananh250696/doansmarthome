@@ -30,16 +30,16 @@ angular.module('myApp', [
 	}
 	
 	$scope.upt5  = function(){
-		mySocket.emit("RAIN")
+		mySocket.emit("LED1ON")
 	}
 	$scope.upt51  = function(){
-		mySocket.emit("2")
+		mySocket.emit("LED1OFF")
 	}
 	$scope.upt6  = function(){
-		mySocket.emit("3")
+		mySocket.emit("LED2ON")
 	}
 	$scope.upt61  = function(){
-		mySocket.emit("4")
+		mySocket.emit("LED2OFF")
 	}
 	$scope.upt7  = function(){
 		mySocket.emit("5")
