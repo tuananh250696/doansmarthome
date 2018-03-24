@@ -42,16 +42,16 @@ angular.module('myApp', [
 		mySocket.emit("LED2OFF")
 	}
 	$scope.upt7  = function(){
-		mySocket.emit("5")
+		mySocket.emit("LED3ON")
 	}
 	$scope.upt71  = function(){
-		mySocket.emit("6")
+		mySocket.emit("LED3OFF")
 	}
 	$scope.upt8  = function(){
-		mySocket.emit("7")
+		mySocket.emit("LED4ON")
 	}
 	$scope.upt81  = function(){
-		mySocket.emit("8")
+		mySocket.emit("LED4ON")
 	}
 	
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
