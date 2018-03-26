@@ -54,12 +54,6 @@ angular.module('myApp', [
 		mySocket.emit("LED4ON")
 	}
 	
-	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
-	mySocket.on('LED_STATUS', function(json) {
-		//Nhận được thì in ra thôi hihi.
-		console.log("recv LED", json)
-		$scope.leds_status = json.data
-	})
 	
 		
 });
