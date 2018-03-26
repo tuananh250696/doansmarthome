@@ -21,7 +21,7 @@ angular.module('myApp', [
     //cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
 
-	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
+	$scope.buttons = [] //arduino gửi thì nhận 
       	$scope.se=[2]
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
@@ -55,6 +55,11 @@ angular.module('myApp', [
 	}
 	
 	//Cách gửi tham số 1: dùng biến toàn cục! $scope.<tên biến> là biến toàn cục
+	mySocket.on('LED_STATUS', function(json) {
+		//Nhận được thì in ra thôi hihi.
+		console.log("recv LED", json)
+		$scope.leds_status = json.data
+	})
 	
 		
 });
