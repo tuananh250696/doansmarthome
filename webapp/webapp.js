@@ -23,6 +23,7 @@ angular.module('myApp', [
 
 	$scope.buttons = [] //arduino gửi thì nhận 
       	$scope.se=[2]
+	var ip = document.getElementById('ip').value;
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
 	$scope.updateSensor  = function() {
