@@ -18,7 +18,7 @@ esp8266_nsp.use(middleware);									//Khi esp8266 emit bất kỳ lệnh gì l�
 webapp_nsp.use(middleware);									//Khi webapp emit bất kỳ lệnh gì lên thì sẽ bị bắt
 
 server.listen(process.env.PORT || PORT);										// Cho socket server (chương trình mạng) lắng nghe ở port 3484
-console.log("Server nodejs chay tai dia chi: " + ip.address() + ":" + PORT)
+console.log("Server nodejs chay tai dia chi: " + 22 + ip.address() + ":" + PORT)
 
 //Cài đặt webapp các fie dữ liệu tĩnh
 app.use(express.static("node_modules/mobile-angular-ui")) 			// Có thể truy cập các file trong node_modules/mobile-angular-ui từ xa
