@@ -27,10 +27,7 @@ angular.module('myApp', [
 	//các sự kiện ng-click, nhấn nút
 	$scope.updateSensor  = function() {
 		mySocket.emit("RAIN")
-		var ip = document.getElementById('ip').value;
-				var url = "bai-tap.herokuapp.com"+ ip 
-				$.getJSON(url, function(data) {
-					console.log(data);
+		
 	}
 	
 	$scope.upt5  = function(){
