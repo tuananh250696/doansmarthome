@@ -26,8 +26,8 @@ angular.module('myApp', [
 	var ip = document.getElementById('ip').value;
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
-	$scope.updateSensor  = function() {
-		mySocket.emit("RAIN"+ip)
+	$scope.updateSensor  = function(ip) {
+		mySocket.emit("RAIN")
 		
 	}
 	
