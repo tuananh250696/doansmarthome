@@ -20,7 +20,7 @@ angular.module('myApp', [
 	////Khu 1 -- Khu cài đặt tham số 
     //cài đặt một số tham số test chơi
 	//dùng để đặt các giá trị mặc định
-         <input type="text" id="ip" class="ip" placeholder="ip theo code adruino"></input><br>
+   
 	$scope.buttons = [] //arduino gửi thì nhận 
       	$scope.se=[2]
 	var ip = 2222;
