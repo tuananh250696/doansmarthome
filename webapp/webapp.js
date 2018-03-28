@@ -33,25 +33,32 @@ angular.module('myApp', [
 		mySocket.emit("LED1ON"+ip)
 	}
 	$scope.upt51  = function(){
-		mySocket.emit("LED1OFF")
+	     var ip = document.getElementById('ip').value;
+		mySocket.emit("LED1OFF"+ip)
 	}
 	$scope.upt6  = function(){
-		mySocket.emit("LED2ON")
+		var ip = document.getElementById('ip').value;
+		mySocket.emit("LED2ON"+ip)
 	}
 	$scope.upt61  = function(){
-		mySocket.emit("LED2OFF")
+		var ip = document.getElementById('ip').value;
+		mySocket.emit("LED2OFF"+ip)
 	}
 	$scope.upt7  = function(){
-		mySocket.emit("LED3ON")
+		var ip = document.getElementById('ip').value;
+		mySocket.emit("LED3ON"+ip)
 	}
 	$scope.upt71  = function(){
-		mySocket.emit("LED3OFF")
+		var ip = document.getElementById('ip').value;
+		mySocket.emit("LED3OFF"+ip)
 	}
 	$scope.upt8  = function(){
-		mySocket.emit("LED4ON")
+		var ip = document.getElementById('ip').value;
+		mySocket.emit("LED4ON"+ip)
 	}
 	$scope.upt81  = function(){
-		mySocket.emit("LED4ON")
+		var ip = document.getElementById('ip').value;
+		mySocket.emit("LED4ON"+ip)
 	}
 	
 	
