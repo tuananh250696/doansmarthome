@@ -26,7 +26,7 @@ angular.module('myApp', [
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
 	$scope.updateSensor  = function() {
-		mySocket.emit("RAIN")
+		mySocket.emit("RAIN"+ip)
 		
 	}
 	
