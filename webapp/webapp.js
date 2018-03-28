@@ -23,12 +23,13 @@ angular.module('myApp', [
    
 	$scope.buttons = [] //arduino gửi thì nhận 
       	$scope.se=[2]
-	var ip = 2222;
+	
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
 	
 	
 	$scope.upt5  = function(){
+		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED1ON"+ip)
 	}
 	$scope.upt51  = function(){
