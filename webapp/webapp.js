@@ -67,12 +67,12 @@ angular.module('myApp', [
 		mySocket.emit("RAIN")
 	}
 	mySocket.on('RAIN', function(json) {
-		$scope.CamBienMua = (json.digital == 1) ? "bat" : "tat"
+	$scope.CamBienMua = (json.digital == 1) ? "bậtled" : "tắtled"
 	})
 	
 	mySocket.on('connect', function() {
 		console.log("connected")
-		mySocket.emit("RAIN") 
+		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
 	})
 		
 });
