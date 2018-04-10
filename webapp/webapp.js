@@ -58,11 +58,5 @@ angular.module('myApp', [
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED4ON"+ip)
 	}
-	$scope.CamBienMua = "Không biết nữa ahihi, chưa thấy có thằng nào cập nhập hết";
-	$scope.updateSensor  = function() {
-		mySocket.emit("RAIN")
-	}
-	mySocket.on('connect', function() {
-		console.log("connected")
-		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
+	
 });
