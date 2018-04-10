@@ -21,7 +21,7 @@ angular.module('myApp', [
 	//dùng để đặt các giá trị mặc định
    
 	$scope.buttons = [] //arduino gửi thì nhận 
-      	$scope.se=[2]
+
 	
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
@@ -61,13 +61,13 @@ angular.module('myApp', [
 	}
 	
 	
-	$scope.CamBienMua = "Chưa có tin hiệu";
+	$scope.CamBienMua = "Không biết nữa ahihi, chưa thấy có thằng nào cập nhập hết";
 	//các sự kiện ng-click, nhấn nút
 	$scope.updateSensor  = function() {
 		mySocket.emit("RAIN")
 	}
 	mySocket.on('RAIN', function(json) {
-	$scope.CamBienMua = (json.digital == 1) ? "bậtled" : "tắtled"
+		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa rồi yeah ahihi"
 	})
 	
 	mySocket.on('connect', function() {
