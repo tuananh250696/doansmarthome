@@ -61,10 +61,7 @@ angular.module('myApp', [
 	}
 	
 	
-		$scope.CamBienMua = "Chưa có tin hiệu";
-    $scope.leds_status = [1, 1]
-	
-	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
+	$scope.CamBienMua = "Chưa có tin hiệu";
 	//các sự kiện ng-click, nhấn nút
 	$scope.updateSensor  = function() {
 		mySocket.emit("RAIN")
