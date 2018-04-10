@@ -62,5 +62,21 @@ angular.module('myApp', [
 	}
 	
 	
+		$scope.CamBienMua = "Không biết nữa ahihi, chưa thấy có thằng nào cập nhập hết";
+    $scope.leds_status = [1, 1]
+	
+	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
+	//các sự kiện ng-click, nhấn nút
+	$scope.updateSensor  = function() {
+		mySocket.emit("RAIN")
+	}
+	mySocket.on('RAIN', function(json) {
+		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa rồi yeah ahihi"
+	})
+	
+	mySocket.on('connect', function() {
+		console.log("connected")
+		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
+	})
 		
 });
