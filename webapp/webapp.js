@@ -58,7 +58,17 @@ angular.module('myApp', [
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED4ON"+ip)
 	}
+	 $scope.CamBienMua = "Không biết nữa ahihi, chưa thấy có thằng nào cập nhập hết"
+	$scope.updateSensor  = function() {
+		mySocket.emit("RAIN")
+	}
+	mySocket.on('RAIN', function(json) {
+		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa rồi yeah ahihi"
+	})
 	
-	
+	//// Khu 4 -- Những dòng code sẽ được thực thi khi kết nối với Arduino (thông qua socket server)
+	mySocket.on('connect', function() {
+		console.log("connected")
+		mySocket.emit("RAIN") //Cập nhập trạng thái m
 		
 });
