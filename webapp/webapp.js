@@ -20,7 +20,10 @@ angular.module('myApp', [
 	////Khu 1 -- Khu cài đặt tham số 
 	//dùng để đặt các giá trị mặc định
    
-	
+        $scope.CamBienMua = "Không biết nữa ahihi, chưa thấy có thằng nào cập nhập hết";
+	$scope.updateSensor  = function() {
+		mySocket.emit("RAIN")
+	}
 	$scope.upt5  = function(){
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED1ON"+ip)
@@ -54,6 +57,13 @@ angular.module('myApp', [
 		mySocket.emit("LED4ON"+ip)
 	}
 	
+	mySocket.on('RAIN', function(json) {
+		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa rồi yeah ahihi"
+	})
+	mySocket.on('connect', function() {
+		console.log("connected")
+		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
+	})
 
 	
 });
