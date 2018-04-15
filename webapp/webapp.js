@@ -20,7 +20,7 @@ angular.module('myApp', [
 	////Khu 1 -- Khu cài đặt tham số 
 	//dùng để đặt các giá trị mặc định
    
-        $scope.CamBienMua = "Không biết nữa ahihi, chưa thấy có thằng nào cập nhập hết";
+        $scope.CamBienMua = "chua cap nhật";
 	$scope.updateSensor  = function() {
 		mySocket.emit("RAIN")
 	}
