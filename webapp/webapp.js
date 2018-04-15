@@ -20,11 +20,13 @@ angular.module('myApp', [
 	////Khu 1 -- Khu cài đặt tham số 
 	//dùng để đặt các giá trị mặc định
    
-
-	
+	 $scope.CamBienMua = "chưa co cap nhat";
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
 	
+	$scope.updateSensor  = function() {
+		mySocket.emit("RAIN")
+	}
 	
 	$scope.upt5  = function(){
 		var ip = document.getElementById('ip').value;
@@ -58,8 +60,13 @@ angular.module('myApp', [
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED4ON"+ip)
 	}
-	mySocket.on('RAIN', function(json) {
+	        mySocket.on('RAIN', function(json) {
 		$scope.CamBienMua = (json.digital == 1) ? "led 1 đang bật"
+			
+		mySocket.on('connect', function() {
+		console.log("connected")
+		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
+	})
 	})
 	
 });
