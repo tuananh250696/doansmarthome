@@ -22,12 +22,7 @@ angular.module('myApp', [
    
 	 $scope.CamBienMua = "chưa co cap nhat";
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
-	//các sự kiện ng-click, nhấn nút
-	
-	$scope.updateSensor  = function() {
-		mySocket.emit("RAIN")
-	}
-	
+	//các sự kiện ng-click, nhấn nú	
 	$scope.upt5  = function(){
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED1ON"+ip)
@@ -63,9 +58,7 @@ angular.module('myApp', [
 	        mySocket.on('RAIN', function(json) {
 		$scope.CamBienMua = (json.digital == 1) ? "led 1 đang bật"
 			
-		mySocket.on('connect', function() {
-		console.log("connected")
-		mySocket.emit("RAIN") //Cập nhập trạng thái mưa
+		
 	})
 	})
 	
