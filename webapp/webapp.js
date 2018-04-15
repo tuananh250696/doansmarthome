@@ -53,8 +53,7 @@ angular.module('myApp', [
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED4ON"+ip)
 	}
-	       
-	});
+	
 
 	
 });
