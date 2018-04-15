@@ -58,7 +58,7 @@ angular.module('myApp', [
 	}
 	
 	mySocket.on('RAIN', function(json) {
-		$scope.CamBienMua = (json.digital == 1) ? "Không mưa" : "Có mưa rồi yeah ahihi"
+		$scope.CamBienMua = (json.digital == 1) ? "led bat"
 	})
 	mySocket.on('connect', function() {
 		console.log("connected")
