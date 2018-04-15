@@ -20,8 +20,12 @@ angular.module('myApp', [
 	////Khu 1 -- Khu cài đặt tham số 
 	//dùng để đặt các giá trị mặc định
    
-     
-	}
+
+	
+	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
+	//các sự kiện ng-click, nhấn nút
+	
+	
 	$scope.upt5  = function(){
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED1ON"+ip)
@@ -55,7 +59,6 @@ angular.module('myApp', [
 		mySocket.emit("LED4ON"+ip)
 	}
 	
-
 	
-	
+		
 });
