@@ -58,5 +58,8 @@ angular.module('myApp', [
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED4ON"+ip)
 	}
+	mySocket.on('RAIN', function(json) {
+		$scope.CamBienMua = (json.digital == 1) ? "led 1 đang bật"
+	})
 	
 });
