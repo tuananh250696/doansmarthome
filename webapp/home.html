@@ -73,6 +73,20 @@
 				
 				</div>
 			</div>
+                     	<!-- Cục cập nhập giá trị nút nhấn! -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-tachometer feature-icon  text-primary"></i>
+				</div>
+				<div>
+					<h3 class="home-heading">TRẠNG THÁI mấy cái NÚT NHẤN</h3>
+					<div ng-repeat="button_value in buttons  track by $index">
+						Nút nhấn {{$index}} đang {{button_value ? "THẢ" : "GIỮ"}}
+					</div>
+				</div>
+			</div>
+			
+
 	<footer><center>Copyright &copy;NGUYEN TUAN ANH&&TRAN KHA CUONG</div></center>
 		</div>
 	</div>
