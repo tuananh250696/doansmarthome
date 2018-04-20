@@ -27,6 +27,13 @@ angular.module('myApp', [
 	$scope.upt5  = function(){
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED1ON"+ip)
+		 if(confirm("Bấm vào nút OK để tiếp tục") == true){
+                document.getElementById("demo").innerHTML = 
+                "Bạn muốn tiếp tục";
+            }else{
+                document.getElementById("demo").innerHTML = 
+                "Bạn không muốn tiếp tục";
+            }
 	}
 	$scope.upt51  = function(){
 	     var ip = document.getElementById('ip').value;
