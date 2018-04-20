@@ -1,79 +1,74 @@
-<style type="text/css">
-        body{
-            margin:0px;
-        }
-      #container{
-           
-            border:2px solid red;
-               margin-left:auto;
-            margin-right:auto;
-                }
-        #header{
-            background-color:green;
-            color:white;
-	}
-        .title1{
-            font-size:30px;
-            text-align:center;
-            padding-top:15px;
-        }
-     .button2 {
-     background-color: white;
-     color: green;border: 2px solid #008CBA; border-radius: 10px;
-	 }
-     .button2:hover {		     
-      background-color: #008CBA;color: green;
-     }
-       .button3 {background-color: white; color: black; border: 2px solid #f44336; border-radius: 10px;} 
-	.button3:hover {background-color: #f44336;color: white;}    
-	     
-	    
-    </style>
-
-   
-       <body>
-	<center>
-        <div class="scrollable">
-	<div class="scrollable-content ">
+<div class="scrollable">
+	<div class="scrollable-content">
 		<div class="list-group text-center">
 			<!-- cục giới thiệu -->
-		
-                 <div id="container">
-                           <div id="header">
-                           <div class="title1">SOCKET WEB</div>
-				<img src=http://vtv1.vcmedia.vn/k:2015/untitled-1-1431324468444/toi-thay-hoa-vang-tren-co-xanh-tung-trailer-chinh-thuc.jpg width=1400px height=250px>
+			<div class="list-group-item list-group-item-home">
 				<h1>Socket Client Webapp <small>1.0</small>
-			 </div
-			 </div		
-		   </body>	
-	  
-       
-		<!-- Cục cập nhập led-->
+				</h1>
+			</div>
+			
+			<!-- Cục cảm biến mưa -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-gamepad feature-icon text-primary"></i>
+				</div>
+				<div>
+					<h3 class="home-heading">Cảm biến mưa</h3>
+					Kết quả: {{CamBienMua}}
+				</div>
+			</div>
+			
+			<!-- Cục cập nhập giá trị cảm biến -->
 			<div class="list-group-item list-group-item-home">
 				<div>
 					<i class="fa fa-tachometer feature-icon  text-primary"></i>
 				</div>
 				<div>
-					<h3 class="home-heading">cổng</h3>
-				          <input type="text" id="ip" class="ip" placeholder="ip theo code adruino"></input><br>
-					<button class="button button2" ng-click="upt5()">ON TBI 1</button>
-					<button class="button button3" ng-click="upt51()">Off TBI 1</button>
-					 <br>
-					<button class="button button2" ng-click="upt6()">ON TB2</button>
-					<button class="button button3" ng-click="upt61()">Off TB2</button>
-					 <br>
-					<button class="button button2" ng-click="upt7()">ON TB3</button>
-					<button class="button button3" ng-click="upt71()">Off TB3</button>
-				         <br>
-					<button class="button button2" ng-click="upt8()">ON TBI4</button>
-					<button class="button button3" ng-click="upt81()">Off TBI4</button>
-					 <br>
-					
-				</div>
-				
+					<h3 class="home-heading">Cập nhập cảm biến</h3>
+					<button class="button" ng-click="updateSensor()">
+						Nhấn vô dể cập nhập giá trị cảm biến
+					</button>
 				</div>
 			</div>
-                     	<!-- Cục cập nhập giá trị nút nhấn! -->
+			
+			<!-- Cục cập nhập giá trị servo -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-tachometer feature-icon  text-primary"></i>
+				</div>
+				<div>
+					<h3 class="home-heading">Cập nhập giá trị servo</h3>
+					<input type="text" class="input text" ng-model="servoPosition" ng-change="updateServo(servoPosition)" />
+				</div>
+			</div>
+			
+			<!-- Cục thay đổi chữ trên LCD-->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-tachometer feature-icon  text-primary"></i>
+				</div>
+				<div>
+					<h3 class="home-heading">Cập nhập giá trị LCD </h3>
+					<input type="text" class="input text" ng-model="lcd[0]" ng-change="updateLCD()" />
+					<input type="text" class="input text" ng-model="lcd[1]" ng-change="updateLCD()" />
+				</div>
+			</div>
+			
+			
+			<!-- Cục thay đổi trạng thái LED -->
+			<div class="list-group-item list-group-item-home">
+				<div>
+					<i class="fa fa-tachometer feature-icon  text-primary"></i>
+				</div>
+				<div>
+					<h3 class="home-heading">TRẠNG THÁI ĐÈN LED</h3>
+					<div ng-repeat="led_value in leds_status  track by $index">
+						Đèn LED thứ {{$index}} đang {{led_value ? "Bật" : "Tắt"}}. <input type="checkbox" ng-true-value="1" ng-false-value="0" ng-change="changeLED()" ng-model="leds_status[$index]" />
+					</div>
+				</div>
+			</div>
+			
+			<!-- Cục cập nhập giá trị nút nhấn! -->
 			<div class="list-group-item list-group-item-home">
 				<div>
 					<i class="fa fa-tachometer feature-icon  text-primary"></i>
@@ -86,8 +81,7 @@
 				</div>
 			</div>
 			
-
-	<footer><center>Copyright &copy;NGUYEN TUAN ANH&&TRAN KHA CUONG</div></center>
+			
 		</div>
 	</div>
 </div>
