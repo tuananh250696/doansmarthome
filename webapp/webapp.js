@@ -25,8 +25,9 @@ angular.module('myApp', [
 	
 	
 	$scope.upt5  = function(){
-	
-            document.getElementById("demo").innerHTML = "TBỊ 1 ON"; 
+	var ip = document.getElementById('ip').value;
+		mySocket.emit("LED1ON"+ip)
+          
 	}
 	$scope.upt51  = function(){
 	     var ip = document.getElementById('ip').value;
