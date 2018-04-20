@@ -18,10 +18,8 @@ angular.module('myApp', [
 /////////////////////// Những dòng code ở trên phần này là phần cài đặt, các bạn hãy đọc thêm angularjs
 }).controller('Home', function($scope, mySocket) {
 	////Khu 1 -- Khu cài đặt tham số 
-	//dùng để đặt các giá trị mặc định
-   
-
-	
+	//dùng để đặt các giá trị mặc định 
+	$scope.buttons = [] //chả có gì cả, arduino gửi nhiêu thì nhận nhiêu!
 	////Khu 2 -- Cài đặt các sự kiện khi tương tác với người dùng
 	//các sự kiện ng-click, nhấn nút
 	
@@ -58,7 +56,12 @@ angular.module('myApp', [
 		var ip = document.getElementById('ip').value;
 		mySocket.emit("LED4ON"+ip)
 	}
-	
+	//khi nhận được lệnh Button
+	mySocket.on('BUTTON', function(json) {
+		//Nhận được thì in ra thôi hihi.
+		console.log("recv BUTTON", json)
+		$scope.buttons = json.data
+	})
 	
 		
 });
