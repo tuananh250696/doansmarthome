@@ -55,7 +55,7 @@ angular.module('myApp', [
 	}
 	$scope.upt81  = function(){
 		var ip = document.getElementById('ip').value;
-		mySocket.emit("LED4ON"+ip)
+		mySocket.emit("LED4OFF"+ip)
 	}
 	//khi nhận được lệnh Button
 	mySocket.on('BUTTON', function(json) {
